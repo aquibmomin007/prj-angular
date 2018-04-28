@@ -12,7 +12,9 @@ export class RecipesComponent implements OnInit {
 	
 	cItem:Recipe;
 
-	constructor() { }
+	constructor(private recipeService: RecipeService) { 
+
+	}
 
 	ngOnInit() {
 	}
