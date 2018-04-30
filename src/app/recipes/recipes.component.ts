@@ -17,6 +17,12 @@ export class RecipesComponent implements OnInit {
 	}
 
 	ngOnInit() {
+		this.recipeService.currentSelectedItem
+			.subscribe(
+				(curR: Recipe) => {
+					this.cItem = curR;
+				}
+			);
 	}
 
 }
