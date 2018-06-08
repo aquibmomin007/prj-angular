@@ -8,15 +8,15 @@ export class RecipeService{
 	currentSelectedItem  = new EventEmitter<Recipe>();
 	private recipes: Recipe[] = [
 		new Recipe(
-				'A Test Recipe 1', 
+				'Chicken Schnitzel', 
 				'This is simply a test 1', 
-				'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+				'https://www.recipetineats.com/wp-content/uploads/2017/08/Schnitzel-3-landscape.jpg',
 				[new Ingredient('Meat', 4), new Ingredient('fries', 10)]
 			),
 	    new Recipe(
-	    		'A Test Recipe 2', 
+	    		'Chocolate Croissants', 
 	    		'This is simply a test 2', 
-	    		'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+	    		'https://www.homemadeinterest.com/wp-content/uploads/2017/02/Chocolate-Croissants-in-20-minutes_FB.jpg',
 	    		[new Ingredient('banana', 1), new Ingredient('apple', 10), new Ingredient('orange', 13)]
 	    	)
 	];
@@ -25,6 +25,13 @@ export class RecipeService{
 
 	}
 
+	getCurrentRecipe(id: number){
+		return this.recipes.find(
+			(s, i) => {
+				return i === id;
+			}
+		);
+	}
 
 	getRecipes(){
 		return this.recipes.slice();
